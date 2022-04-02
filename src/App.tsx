@@ -2,15 +2,15 @@ import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
 import { TransactionTable } from "./components/TransactionTable";
 import { GlobalStyle } from "./styles/global";
-import { TransactionsContext } from "./TransactionsContext";
+import { TransactionProvider } from "./hooks/useTransactions";
 
 export function App() {
   return (
-    <TransactionsContext.Provider value={[]}>
+    <TransactionProvider>
       <Header />
       <Dashboard />
       <TransactionTable />
       <GlobalStyle />
-    </TransactionsContext.Provider>
+    </TransactionProvider>
   );
 }
